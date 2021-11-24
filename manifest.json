@@ -1,0 +1,20 @@
+{
+  "name": "Scrollmarks",
+  "description": "Bookmark a more precise location.",
+  "version": "1.0",
+  "manifest_version": 3,
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [{
+    "matches": ["<all_urls>"],
+    "js": ["content.js"],
+    "all_frames": true,
+    "match_about_blank": true
+  }],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "permissions": ["storage", "tabs", "contextMenus", "scripting"],
+  "host_permissions": ["<all_urls>"]
+}
